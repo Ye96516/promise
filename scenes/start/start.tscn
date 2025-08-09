@@ -1,0 +1,96 @@
+[gd_scene load_steps=11 format=3 uid="uid://blf3ijk8uxcnp"]
+
+[ext_resource type="Shader" uid="uid://c5aciovdkc4p1" path="res://神威.gdshader" id="1_oeh0t"]
+[ext_resource type="Texture2D" uid="uid://sa1gjlgw8nse" path="res://1.jpg" id="2_stwfd"]
+[ext_resource type="Script" uid="uid://cma4e63g5eu2q" path="res://scenes/start/start_game.gd" id="3_1eg8k"]
+[ext_resource type="Texture2D" uid="uid://chdtjmkds3y6t" path="res://icon.svg" id="3_eqbev"]
+[ext_resource type="PackedScene" uid="uid://cw56qggysjdee" path="res://scenes/t/control.tscn" id="4_0stv2"]
+[ext_resource type="Script" uid="uid://cmpvbdrvbog6m" path="res://scripts/UI_hover.gd" id="4_stwfd"]
+[ext_resource type="Texture2D" uid="uid://dnipkwibkgy2f" path="res://Header.png" id="5_stwfd"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ae20m"]
+shader = ExtResource("1_oeh0t")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0stv2"]
+texture = ExtResource("5_stwfd")
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_0stv2"]
+
+[node name="Start" type="Node2D"]
+
+[node name="Bg2" type="Sprite2D" parent="."]
+texture = ExtResource("2_stwfd")
+offset = Vector2(960, 540)
+
+[node name="Bg" type="Sprite2D" parent="."]
+modulate = Color(0.113725, 0.133333, 0.160784, 1)
+material = SubResource("ShaderMaterial_ae20m")
+position = Vector2(1849, 67)
+texture = ExtResource("3_eqbev")
+
+[node name="Button2" type="Button" parent="."]
+offset_left = -189.0
+offset_top = 1247.0
+offset_right = 739.0
+offset_bottom = 1476.0
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 128
+text = "nihao"
+
+[node name="Button" type="Button" parent="."]
+offset_left = 584.0
+offset_top = 1308.0
+offset_right = 1512.0
+offset_bottom = 1654.0
+size_flags_vertical = 3
+
+[node name="StartGame" type="Button" parent="."]
+offset_left = 696.0
+offset_top = 779.0
+offset_right = 1216.0
+offset_bottom = 962.0
+theme_override_font_sizes/font_size = 128
+text = "进入游戏"
+script = ExtResource("3_1eg8k")
+target_scene = ExtResource("4_0stv2")
+
+[node name="UIHover" type="Node" parent="StartGame"]
+script = ExtResource("4_stwfd")
+t_time = 0.1
+hover_scale = Vector2(2, 2)
+metadata/_custom_type_script = "uid://cmpvbdrvbog6m"
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = -1198.0
+offset_top = 21.0
+offset_right = -270.0
+offset_bottom = 717.0
+
+[node name="Panel" type="Panel" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_0stv2")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button3" type="Button" parent="Panel/Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.74902, 0.756863, 0.580392, 1)
+position = Vector2(317, -303)
+scale = Vector2(200, 200)
+texture = SubResource("CanvasTexture_0stv2")
+
+[connection signal="pressed" from="StartGame" to="StartGame" method="_on_pressed"]
