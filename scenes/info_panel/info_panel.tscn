@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://ds757xqcmumt5"]
+[gd_scene load_steps=6 format=3 uid="uid://ds757xqcmumt5"]
 
 [ext_resource type="Texture2D" uid="uid://bj1kjvq5yg1kr" path="res://art/pic/panel.png" id="1_373m0"]
+[ext_resource type="Script" uid="uid://dc6mq8qum3dgq" path="res://scenes/info_panel/info_panel.gd" id="1_nefq0"]
 
 [sub_resource type="GDScript" id="GDScript_373m0"]
 script/source = "extends Panel
@@ -20,6 +21,7 @@ bg_color = Color(0.696516, 0.480386, 0.388758, 1)
 shadow_size = 15
 
 [node name="InfoPanel" type="CanvasLayer"]
+script = ExtResource("1_nefq0")
 
 [node name="Control" type="Panel" parent="."]
 anchors_preset = 15
@@ -37,6 +39,7 @@ offset_bottom = 1004.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_nefq0")
 
 [node name="Head" type="Label" parent="Panel"]
+unique_name_in_owner = true
 layout_mode = 0
 offset_left = 40.0
 offset_top = -15.0
@@ -48,6 +51,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Stem" type="Label" parent="Panel"]
+unique_name_in_owner = true
 layout_mode = 0
 offset_left = 35.0
 offset_top = 107.0
@@ -60,14 +64,17 @@ horizontal_alignment = 1
 autowrap_mode = 1
 
 [node name="Button" type="Button" parent="Panel"]
+unique_name_in_owner = true
 layout_mode = 0
 offset_left = 79.0
 offset_top = 278.0
 offset_right = 829.0
 offset_bottom = 439.0
+theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_373m0")
 
 [node name="Button2" type="Button" parent="Panel"]
+unique_name_in_owner = true
 layout_mode = 0
 offset_left = 79.0
 offset_top = 471.0
@@ -80,11 +87,13 @@ text = "飞机（直飞拉萨）
 健康-20"
 
 [node name="Button3" type="Button" parent="Panel"]
+unique_name_in_owner = true
 layout_mode = 0
 offset_left = 79.0
 offset_top = 671.0
 offset_right = 829.0
 offset_bottom = 832.0
+theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_373m0")
 
 [node name="Label" type="Label" parent="Panel"]
