@@ -52,6 +52,7 @@ expand_mode = 2
 stretch_mode = 4
 
 [node name="TimeWakeValue" type="Label" parent="VBoxContainer/HeadPanel/Head"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
@@ -62,6 +63,7 @@ text = "时间：
 vertical_alignment = 1
 
 [node name="MoneyHealthValue" type="Label" parent="VBoxContainer/HeadPanel/Head"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 2.65

@@ -36,8 +36,6 @@ target_scene = ExtResource("4_0stv2")
 
 [node name="UIHover" type="Node" parent="StartGame"]
 script = ExtResource("4_stwfd")
-t_time = 0.1
-hover_scale = Vector2(2, 2)
 metadata/_custom_type_script = "uid://cmpvbdrvbog6m"
 
 [connection signal="pressed" from="StartGame" to="StartGame" method="_on_pressed"]
