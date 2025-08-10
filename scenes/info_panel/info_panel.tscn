@@ -1,0 +1,103 @@
+[gd_scene load_steps=5 format=3 uid="uid://ds757xqcmumt5"]
+
+[ext_resource type="Texture2D" uid="uid://bj1kjvq5yg1kr" path="res://art/pic/panel.png" id="1_373m0"]
+
+[sub_resource type="GDScript" id="GDScript_373m0"]
+script/source = "extends Panel
+
+func _on_gui_input(event: InputEvent) -> void:
+	if event is InputEventMouseButton:
+		#print(event)
+		if event.is_released():
+			get_parent().visible=!get_parent().visible
+"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nefq0"]
+texture = ExtResource("1_373m0")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_373m0"]
+bg_color = Color(0.696516, 0.480386, 0.388758, 1)
+shadow_size = 15
+
+[node name="InfoPanel" type="CanvasLayer"]
+
+[node name="Control" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = SubResource("GDScript_373m0")
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 554.0
+offset_top = 66.0
+offset_right = 1462.0
+offset_bottom = 1004.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_nefq0")
+
+[node name="Head" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 40.0
+offset_top = -15.0
+offset_right = 854.0
+offset_bottom = 117.0
+theme_override_font_sizes/font_size = 80
+text = "选择进藏方式"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Stem" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 35.0
+offset_top = 107.0
+offset_right = 863.0
+offset_bottom = 312.0
+theme_override_font_sizes/font_size = 44
+text = "你决定从北京出发前往西藏，
+有以下几种方式："
+horizontal_alignment = 1
+autowrap_mode = 1
+
+[node name="Button" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 79.0
+offset_top = 278.0
+offset_right = 829.0
+offset_bottom = 439.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_373m0")
+
+[node name="Button2" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 79.0
+offset_top = 471.0
+offset_right = 829.0
+offset_bottom = 632.0
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_373m0")
+text = "飞机（直飞拉萨）
+金钱：-10，时间：1天
+健康-20"
+
+[node name="Button3" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 79.0
+offset_top = 671.0
+offset_right = 829.0
+offset_bottom = 832.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_373m0")
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 862.0
+offset_right = 865.0
+offset_bottom = 994.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 28
+text = "在旅途中，你需要管理金钱，健康和时间，
+做出各种选择，最终影响你的觉醒程度和结局。"
+horizontal_alignment = 1
+autowrap_mode = 1
+
+[connection signal="gui_input" from="Control" to="Control" method="_on_gui_input"]

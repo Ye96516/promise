@@ -2,11 +2,6 @@ extends Control
 
 @export var bg:AudioStream
 
-@export var time:int
-@export var wake:int
-@export var health:int
-@export var gc:int
-
 @onready var time_wake_value: Label = %TimeWakeValue
 @onready var money_health_value: Label = %MoneyHealthValue
 
@@ -17,6 +12,6 @@ func _ready() -> void:
 		AudioPlayer.play(bg,true)
 
 func updata_value():
-	time_wake_value.text="时间："+str(time)+"\n"+"觉醒值"+str(wake)+r"%"
-	money_health_value.text="金钱："+str(gc)+"\n"+"健康值"+str(health)+r"\100"
+	time_wake_value.text="时间："+str(Global.date)+"\n"+"觉醒值："+str(Global.wake)+r"%"
+	money_health_value.text="金钱："+str(Global.gc)+"\n"+"健康值："+str(Global.health)+r"\100"
 	
