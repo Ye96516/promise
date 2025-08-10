@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="Promise"
+run/main_scene="uid://blf3ijk8uxcnp"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 

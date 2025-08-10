@@ -14,7 +14,7 @@ func _ready() -> void:
 	updata_value()
 	
 	if bg:
-		AudioPlayer.play(bg)
+		AudioPlayer.play(bg,true)
 
 func updata_value():
 	time_wake_value.text="时间："+str(time)+"\n"+"觉醒值"+str(wake)+r"%"

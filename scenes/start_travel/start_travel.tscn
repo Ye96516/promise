@@ -139,3 +139,4 @@ size_flags_horizontal = 3
 size_flags_stretch_ratio = 3.82
 
 [node name="PopupPanel" parent="." instance=ExtResource("5_aijxp")]
+visible = false
