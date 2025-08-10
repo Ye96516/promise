@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://blf3ijk8uxcnp"]
+[gd_scene load_steps=10 format=3 uid="uid://blf3ijk8uxcnp"]
 
 [ext_resource type="Script" uid="uid://g7cdha2vjpid" path="res://scenes/start/start.gd" id="1_eqbev"]
 [ext_resource type="Shader" uid="uid://c5aciovdkc4p1" path="res://data/shader/神威.gdshader" id="1_oeh0t"]
+[ext_resource type="AudioStream" uid="uid://cb62n0euaif1v" path="res://art/sound/天空之城（钢琴版）.MP3" id="2_pmgyj"]
 [ext_resource type="Texture2D" uid="uid://sa1gjlgw8nse" path="res://scenes/start/pic/1.jpg" id="2_stwfd"]
 [ext_resource type="Script" uid="uid://cma4e63g5eu2q" path="res://scenes/start/start_game.gd" id="3_1eg8k"]
 [ext_resource type="Texture2D" uid="uid://chdtjmkds3y6t" path="res://icon.svg" id="3_eqbev"]
@@ -13,6 +14,7 @@ shader = ExtResource("1_oeh0t")
 
 [node name="Start" type="Node2D"]
 script = ExtResource("1_eqbev")
+bg = ExtResource("2_pmgyj")
 
 [node name="Bg2" type="Sprite2D" parent="."]
 texture = ExtResource("2_stwfd")
