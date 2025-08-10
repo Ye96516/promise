@@ -14,6 +14,11 @@ config/name="Promise"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+AudioPlayer="*res://scripts/audio_player.gd"
+Global="*res://scripts/global.gd"
+
 [display]
 
 window/size/viewport_width=1920
