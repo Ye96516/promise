@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d1kaftbbojd1"
-path="res://.godot/imported/Headless.png-2efc1917e69c533e143ed1dc1b33c948.ctex"
+uid="uid://sa1gjlgw8nse"
+path="res://.godot/imported/1.jpg-960be7037f5860de2369064cb4e48606.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Headless.png"
-dest_files=["res://.godot/imported/Headless.png-2efc1917e69c533e143ed1dc1b33c948.ctex"]
+source_file="res://scenes/start/pic/1.jpg"
+dest_files=["res://.godot/imported/1.jpg-960be7037f5860de2369064cb4e48606.ctex"]
 
 [params]
 

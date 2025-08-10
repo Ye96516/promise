@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b70nmhml63l7g"
-path="res://.godot/imported/图片1.png-b635a20fef6335f8870e2f2cb3e01231.ctex"
+uid="uid://dqa20nmom0oxw"
+path="res://.godot/imported/travel.png-4b0793ea5b22f37f83de7f4adab59b0a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://图片1.png"
-dest_files=["res://.godot/imported/图片1.png-b635a20fef6335f8870e2f2cb3e01231.ctex"]
+source_file="res://art/pic/travel.png"
+dest_files=["res://.godot/imported/travel.png-4b0793ea5b22f37f83de7f4adab59b0a.ctex"]
 
 [params]
 

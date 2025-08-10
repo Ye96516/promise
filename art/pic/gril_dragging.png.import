@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bgvyv5adayy6h"
-path="res://.godot/imported/Headed.png-77495e2590fde82925a3f21468d00ca0.ctex"
+uid="uid://btrm2jqlbcwxp"
+path="res://.godot/imported/gril_dragging.png-adae8051baff2fb43356327de63ecff7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Headed.png"
-dest_files=["res://.godot/imported/Headed.png-77495e2590fde82925a3f21468d00ca0.ctex"]
+source_file="res://art/pic/gril_dragging.png"
+dest_files=["res://.godot/imported/gril_dragging.png-adae8051baff2fb43356327de63ecff7.ctex"]
 
 [params]
 

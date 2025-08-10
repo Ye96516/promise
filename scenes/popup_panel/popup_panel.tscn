@@ -1,0 +1,57 @@
+[gd_scene load_steps=4 format=3 uid="uid://d2c0re7otfbsq"]
+
+[ext_resource type="Texture2D" uid="uid://btrm2jqlbcwxp" path="res://art/pic/gril_dragging.png" id="1_dov08"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dov08"]
+bg_color = Color(0.494118, 0.65098, 0.717647, 1)
+
+[sub_resource type="GDScript" id="GDScript_dov08"]
+script/source = "extends Button
+
+
+func _on_pressed() -> void:
+	owner.visible=!owner.visible
+	pass # Replace with function body.
+"
+
+[node name="PopupPanel" type="CanvasLayer"]
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -398.0
+offset_top = 120.0
+offset_right = 398.0
+offset_bottom = 1002.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_dov08")
+
+[node name="TextureRect" type="TextureRect" parent="Panel"]
+layout_mode = 0
+offset_right = 792.0
+offset_bottom = 417.0
+texture = ExtResource("1_dov08")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 429.0
+offset_right = 782.0
+offset_bottom = 631.0
+theme_override_font_sizes/font_size = 32
+text = "你是一个普通的城市白领，长期被工作压力和生活琐事困扰。某天，你偶然读到一本关于西藏的书，内心被深深触动，决定踏上一次西藏之旅，寻找内心的“苏醒”。"
+autowrap_mode = 1
+
+[node name="Start" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 63.0
+offset_top = 643.0
+offset_right = 741.0
+offset_bottom = 830.0
+text = "开始旅行"
+script = SubResource("GDScript_dov08")
+
+[connection signal="pressed" from="Panel/Start" to="Panel/Start" method="_on_pressed"]
