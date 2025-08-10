@@ -6,13 +6,13 @@ extends Control
 @onready var money_health_value: Label = %MoneyHealthValue
 
 func _ready() -> void:
-	Global.connect("updata_value",updata_value)
-	updata_value()
+	Global.connect("update_value",update_value)
+	update_value()
 	
 	if bg:
 		AudioPlayer.play(bg,true)
 
-func updata_value():
+func update_value():
 	time_wake_value.text="时间："+str(Global.date)+"\n"+"觉醒值："+str(Global.wake)+r"%"
 	money_health_value.text="金钱："+str(Global.gc)+"\n"+"健康值："+str(Global.health)+r"\100"
 	
