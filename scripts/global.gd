@@ -1,16 +1,30 @@
 extends Node
 
+signal updata_value
+
 const CONFIGURATION = "res://data/config/Configuration.json"
 var data:Array
 
 #金币
-var gc:int=8000
+var gc:int=8000:
+	set(v):
+		gc=v
+		updata_value.emit()
 #健康
-var health:int=80
+var health:int=80:
+	set(v):
+		health=v
+		updata_value.emit()
 #时间
-var date:int=15
+var date:int=15:
+	set(v):
+		date=v
+		updata_value.emit()
 #觉醒值
-var wake:int=0
+var wake:int=0:
+	set(v):
+		wake=v
+		updata_value.emit()
 
 #当前消息序号
 var current_info:int

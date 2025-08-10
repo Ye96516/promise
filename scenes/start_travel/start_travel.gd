@@ -6,6 +6,7 @@ extends Control
 @onready var money_health_value: Label = %MoneyHealthValue
 
 func _ready() -> void:
+	Global.connect("updata_value",updata_value)
 	updata_value()
 	
 	if bg:

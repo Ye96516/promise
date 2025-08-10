@@ -6,25 +6,32 @@ extends CanvasLayer
 @onready var button_2: Button = %Button2
 @onready var button_3: Button = %Button3
 
-# Called when the node enters the scene tree for the first time.
+"""
+["A.飞机（直飞拉萨）", "金钱-1900", "时间+1", "健康-20", "觉醒值+5%"]
+"""
+var content_a:PackedStringArray
+var content_b:PackedStringArray
+var content_c:PackedStringArray
+"""
+["A&你决定选择飞机从北京出发前往西藏，快速进入高原导致严重高反&4", 
+"B&你决定选择火车从北京出发前往西藏&2", 
+"C&你决定选择自驾从北京出发前往西藏&3"]
+"""
+var about:PackedStringArray
+
 func _ready() -> void:
 	update_info(Global.current_info)
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
 
 func update_info(co:int):
 	var data:Dictionary=Global.data[co]
 	head.text=data["概括"]
 	stem.text=data["题目"]
+	about=data["关联"].split(";")
 	var content:PackedStringArray=data["选项"].split(";")
-	var content_a:PackedStringArray=content[0].split("|")
-	var content_b:PackedStringArray=content[1].split("|")
+	content_a=content[0].split("|")
+	content_b=content[1].split("|")
 	if content.size()!=2:
-		var content_c:PackedStringArray=content[2].split("|")
+		content_c=content[2].split("|")
 		if content_c.size()==4:
 			button_3.text=content_c[0]+"\n"+content_c[1]+"  "+content_c[2]+"\n"\
 			+content_c[3]
@@ -44,5 +51,43 @@ func update_info(co:int):
 		button_2.text=content_b[0]+"\n"+content_b[1]+"  "+content_b[2]+"\n"\
 		+content_b[3]+"  "+content_b[4]
 	
-	print(content)
 	pass
+
+
+func _on_button_pressed() -> void:
+	print(content_a)
+	for i in content_a.size()-1:
+		match content_a[i+1].substr(0,2):
+			"金钱":
+				Global.gc+=int(content_a[i+1].substr(2,-1))
+			"时间":
+				Global.date+=int(content_a[i+1].substr(2,-1))
+			"健康":
+				Global.health+=int(content_a[i+1].substr(2,-1))
+			"觉醒":
+				Global.wake+=int((content_a[i+1].substr(3,-1)).reverse().substr(1).reverse())
+	
+	
+func _on_button_2_pressed() -> void:
+	for i in content_b.size()-1:
+		match content_b[i+1].substr(0,2):
+			"金钱":
+				Global.gc+=int(content_b[i+1].substr(2,-1))
+			"时间":
+				Global.date+=int(content_b[i+1].substr(2,-1))
+			"健康":
+				Global.health+=int(content_b[i+1].substr(2,-1))
+			"觉醒":
+				Global.wake+=int((content_b[i+1].substr(3,-1)).reverse().substr(1).reverse())
+
+func _on_button_3_pressed() -> void:
+	for i in content_c.size()-1:
+		match content_c[i+1].substr(0,2):
+			"金钱":
+				Global.gc+=int(content_c[i+1].substr(2,-1))
+			"时间":
+				Global.date+=int(content_c[i+1].substr(2,-1))
+			"健康":
+				Global.health+=int(content_c[i+1].substr(2,-1))
+			"觉醒":
+				Global.wake+=int((content_c[i+1].substr(3,-1)).reverse().substr(1).reverse())
