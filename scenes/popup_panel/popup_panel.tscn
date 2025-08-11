@@ -9,8 +9,12 @@ bg_color = Color(0.494118, 0.65098, 0.717647, 1)
 [sub_resource type="GDScript" id="GDScript_dov08"]
 script/source = "extends Button
 
+@onready var label: Label = %Label
 
 func _on_pressed() -> void:
+	if label.text==owner.result[\"treatment\"]:
+		owner.final_info()
+		return
 	owner.visible=!owner.visible
 	pass # Replace with function body.
 "
@@ -30,6 +34,7 @@ grow_horizontal = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_dov08")
 
 [node name="TextureRect" type="TextureRect" parent="Panel"]
+unique_name_in_owner = true
 layout_mode = 0
 offset_right = 792.0
 offset_bottom = 417.0
@@ -38,6 +43,7 @@ expand_mode = 3
 stretch_mode = 5
 
 [node name="Label" type="Label" parent="Panel"]
+unique_name_in_owner = true
 layout_mode = 0
 offset_left = 15.0
 offset_top = 429.0
@@ -48,6 +54,7 @@ text = "你是一个普通的城市白领，长期被工作压力和生活琐事
 autowrap_mode = 1
 
 [node name="Start" type="Button" parent="Panel"]
+unique_name_in_owner = true
 layout_mode = 0
 offset_left = 63.0
 offset_top = 643.0

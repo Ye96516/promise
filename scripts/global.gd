@@ -2,6 +2,7 @@ extends Node
 
 signal update_value
 signal update_scroll_text
+signal info_end
 
 const CONFIGURATION = "res://data/config/Configuration.json"
 var data:Array
