@@ -17,7 +17,7 @@ var health:int=80:
 		health=v
 		update_value.emit()
 #时间
-var date:int=15:
+var date:int=0:
 	set(v):
 		date=v
 		update_value.emit()

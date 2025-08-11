@@ -61,10 +61,10 @@ func _on_button_pressed() -> void:
 	_handle_button_selection(content_a,0)
 	
 func _on_button_2_pressed() -> void:
-	_handle_button_selection(content_a,1)
+	_handle_button_selection(content_b,1)
 	
 func _on_button_3_pressed() -> void:
-	_handle_button_selection(content_a,2)
+	_handle_button_selection(content_c,2)
 
 func _apply_effects(effects: Array) -> void:
 	for effect in effects:

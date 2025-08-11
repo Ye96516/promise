@@ -11,6 +11,8 @@ func _ready() -> void:
 func _gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		if event.is_released():
+			if Global.is_end:
+				return
 			if is_instance_valid(ts):
 				ts.visible=true
 				return
