@@ -4,10 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://dle2s8a1tiyjg" path="res://art/pic/setting.png" id="1_u72xc"]
 [ext_resource type="Texture2D" uid="uid://dqa20nmom0oxw" path="res://art/pic/travel.png" id="2_b478v"]
 [ext_resource type="AudioStream" uid="uid://cb62n0euaif1v" path="res://art/sound/天空之城（钢琴版）.MP3" id="2_w3kh6"]
-[ext_resource type="Texture2D" uid="uid://c5t3nirearp63" path="res://art/pic/Schedule.png" id="3_pue5k"]
 [ext_resource type="Texture2D" uid="uid://ctatvy66ka1yv" path="res://art/pic/Insight.png" id="4_l0a4e"]
 [ext_resource type="Script" uid="uid://cmmplav7f43vh" path="res://scenes/start_travel/icon.gd" id="5_7x2b5"]
 [ext_resource type="PackedScene" uid="uid://d2c0re7otfbsq" path="res://scenes/popup_panel/popup_panel.tscn" id="5_aijxp"]
+[ext_resource type="Texture2D" uid="uid://jo83exjoi20k" path="res://art/pic/schedule.png" id="6_odtmc"]
 [ext_resource type="PackedScene" uid="uid://ds757xqcmumt5" path="res://scenes/info_panel/info_panel.tscn" id="7_odtmc"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g7vj2"]
@@ -138,12 +138,12 @@ script = ExtResource("5_7x2b5")
 [node name="Control2" type="Control" parent="VBoxContainer/IconPanel/Icon"]
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_stretch_ratio = 2.29
+size_flags_stretch_ratio = 6.36
 
 [node name="ScheduleIcon" type="TextureRect" parent="VBoxContainer/IconPanel/Icon"]
 layout_mode = 2
 size_flags_horizontal = 3
-texture = ExtResource("3_pue5k")
+texture = ExtResource("6_odtmc")
 expand_mode = 3
 stretch_mode = 5
 script = ExtResource("5_7x2b5")
@@ -152,7 +152,7 @@ target_scene = ExtResource("7_odtmc")
 [node name="Control3" type="Control" parent="VBoxContainer/IconPanel/Icon"]
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_stretch_ratio = 2.29
+size_flags_stretch_ratio = 6.36
 
 [node name="InsightIcon" type="TextureRect" parent="VBoxContainer/IconPanel/Icon"]
 layout_mode = 2

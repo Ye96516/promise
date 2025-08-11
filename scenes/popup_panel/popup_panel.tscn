@@ -1,5 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://d2c0re7otfbsq"]
+[gd_scene load_steps=5 format=3 uid="uid://d2c0re7otfbsq"]
 
+[ext_resource type="Script" uid="uid://bxcedod0av8vl" path="res://scenes/popup_panel/popup_panel.gd" id="1_bhfvk"]
 [ext_resource type="Texture2D" uid="uid://btrm2jqlbcwxp" path="res://art/pic/gril_dragging.png" id="1_dov08"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dov08"]
@@ -15,6 +16,7 @@ func _on_pressed() -> void:
 "
 
 [node name="PopupPanel" type="CanvasLayer"]
+script = ExtResource("1_bhfvk")
 
 [node name="Panel" type="Panel" parent="."]
 anchors_preset = 5

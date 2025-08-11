@@ -19,6 +19,8 @@ var content_c:PackedStringArray
 """
 var about:PackedStringArray
 
+var days_added:=1
+
 func _ready() -> void:
 	update_info(Global.current_ord-1)
 
@@ -56,6 +58,8 @@ func _set_button_content(btn: Button, parts: PackedStringArray) -> void:
 			btn.text = "\n".join(parts)
 
 func _on_button_pressed() -> void:
+	print(content_a)
+
 	#content_a的示例
 	#["A", "你决定选择飞机从北京出发前往西藏，快速进入高原导致严重高反", "4"]
 	_handle_button_selection(content_a,0)
@@ -69,8 +73,11 @@ func _on_button_3_pressed() -> void:
 func _apply_effects(effects: Array) -> void:
 	for effect in effects:
 		match effect.substr(0, 2):
-			"金钱": Global.gc += int(effect.substr(2))
-			"时间": Global.date += int(effect.substr(2))
+			"金钱": 
+				Global.gc += int(effect.substr(2))
+			"时间": 
+				Global.date += int(effect.substr(2))
+				days_added=int(effect.substr(2))
 			"健康": Global.health += int(effect.substr(2))
 			"觉醒": Global.wake+=int((effect.substr(3,-1)).reverse().substr(1).reverse())
 
@@ -86,7 +93,7 @@ func _handle_button_selection(content_arr: Array, about_index: int) -> void:
 	if content_arr.size() > 1 && content_arr[1].ends_with("晚"):
 		Global.rent=int(content_arr[1].reverse().substr(3,-1).reverse())
 		print("租金为",Global.rent)
-	Global.gc-=Global.rent
+	Global.gc-=Global.rent*days_added
 	
 	# 从索引1开始跳过第一个文本元素
 	var effects = content_arr.slice(1) 
