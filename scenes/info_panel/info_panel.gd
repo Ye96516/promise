@@ -20,7 +20,7 @@ var content_c:PackedStringArray
 var about:PackedStringArray
 
 func _ready() -> void:
-	update_info(Global.current_info)
+	update_info(Global.current_ord-1)
 
 func update_info(co:int):
 	var data:Dictionary=Global.data[co]
@@ -73,12 +73,19 @@ func _apply_effects(effects: Array) -> void:
 			"时间": Global.date += int(effect.substr(2))
 			"健康": Global.health += int(effect.substr(2))
 			"觉醒": Global.wake+=int((effect.substr(3,-1)).reverse().substr(1).reverse())
-				
+
+# 通用的按钮处理逻辑
 func _handle_button_selection(content_arr: Array, about_index: int) -> void:
+	if Global.is_end:
+		return
+	if Global.current_ord==9:
+		Global.is_end=true
+		visible=false
 	# 检查是否为"晚"选项
 	if content_arr.size() > 1 && content_arr[1].ends_with("晚"):
-		print(content_arr)
-	
+		Global.rent=int(content_arr[1].reverse().substr(3,-1).reverse())
+		print("租金为",Global.rent)
+	Global.gc-=Global.rent
 	# 从索引1开始跳过第一个文本元素
 	var effects = content_arr.slice(1) 
 	_apply_effects(effects)
@@ -86,5 +93,6 @@ func _handle_button_selection(content_arr: Array, about_index: int) -> void:
 	# 更新下一题信息
 	var about_parts = about[about_index].split("&")
 	if about_parts.size() >= 3:
-		var next_idx = int(about_parts[2]) - 1
+		Global.current_ord=int(about_parts[2])
+		var next_idx = Global.current_ord - 1
 		update_info(next_idx)

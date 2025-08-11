@@ -25,13 +25,17 @@ var wake:int=0:
 	set(v):
 		wake=v
 		update_value.emit()
+#租金
+var rent:int=0
+#是否结束
+var is_end:=false
 
 #当前消息序号
-var current_info:int
+var current_ord:int=1
 
 func _ready() -> void:
 	data=load_json_file(CONFIGURATION)["data"]
-	#print(data)
+
 func load_json_file(path:String):
 	if FileAccess.file_exists(path):
 		var read_file=FileAccess.open(path,FileAccess.READ)
