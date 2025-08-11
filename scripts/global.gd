@@ -1,6 +1,7 @@
 extends Node
 
 signal update_value
+signal update_scroll_text
 
 const CONFIGURATION = "res://data/config/Configuration.json"
 var data:Array
@@ -25,6 +26,11 @@ var wake:int=0:
 	set(v):
 		wake=v
 		update_value.emit()
+#滚动条文本
+var scroll_text:String="由于长期被工作压力和生活琐事困扰，你决定来一场说走就走的旅程。":
+	set(v):
+		scroll_text=v
+		update_scroll_text.emit()
 #租金
 var rent:int=0
 #是否结束

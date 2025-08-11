@@ -81,17 +81,20 @@ func _handle_button_selection(content_arr: Array, about_index: int) -> void:
 	if Global.current_ord==9:
 		Global.is_end=true
 		visible=false
+		
 	# 检查是否为"晚"选项
 	if content_arr.size() > 1 && content_arr[1].ends_with("晚"):
 		Global.rent=int(content_arr[1].reverse().substr(3,-1).reverse())
 		print("租金为",Global.rent)
 	Global.gc-=Global.rent
+	
 	# 从索引1开始跳过第一个文本元素
 	var effects = content_arr.slice(1) 
 	_apply_effects(effects)
 	
-	# 更新下一题信息
+	# 更新下一题信息以及滚动条文本
 	var about_parts = about[about_index].split("&")
+	Global.scroll_text+="\n"+about_parts[1]
 	if about_parts.size() >= 3:
 		Global.current_ord=int(about_parts[2])
 		var next_idx = Global.current_ord - 1
