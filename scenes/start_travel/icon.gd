@@ -4,11 +4,12 @@ extends TextureRect
 var ts:Node
 
 func _ready() -> void:
-	if target_scene:
-	
-		connect("gui_input",_gui_input)
+	connect("gui_input",_gui_input)
 
 func _gui_input(event: InputEvent) -> void:
+	if not target_scene:
+		return
+
 	if event is InputEventMouseButton:
 		if event.is_released():
 			if Global.is_end:

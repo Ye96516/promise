@@ -83,7 +83,6 @@ func _apply_effects(effects: Array) -> void:
 
 # 通用的按钮处理逻辑
 func _handle_button_selection(content_arr: Array, about_index: int) -> void:
-	print(Global.current_ord)
 	if Global.is_end:
 		return
 		

@@ -1,0 +1,36 @@
+[gd_scene load_steps=2 format=3 uid="uid://dabxu4kp7wxo7"]
+
+[ext_resource type="Texture2D" uid="uid://b26hhqutocqk" path="res://scenes/pics/塔尔寺.jpg" id="1_3kn3w"]
+
+[node name="Pics" type="CanvasLayer"]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ItemList" type="ItemList" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/v_separation = 0
+theme_override_constants/line_separation = 0
+theme_override_constants/h_separation = 0
+select_mode = 1
+allow_reselect = true
+allow_rmb_select = true
+max_text_lines = 3
+auto_height = true
+item_count = 4
+max_columns = 3
+same_column_width = true
+fixed_column_width = 480
+fixed_icon_size = Vector2i(480, 480)
+item_0/icon = ExtResource("1_3kn3w")
+item_1/icon = ExtResource("1_3kn3w")
+item_2/icon = ExtResource("1_3kn3w")
+item_3/icon = ExtResource("1_3kn3w")
