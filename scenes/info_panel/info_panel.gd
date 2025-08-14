@@ -5,6 +5,7 @@ extends CanvasLayer
 @onready var button: Button = %Button
 @onready var button_2: Button = %Button2
 @onready var button_3: Button = %Button3
+@onready var sl:SLSystem=SLSystem.new()
 
 """
 ["A.飞机（直飞拉萨）", "金钱-1900", "时间+1", "健康-20", "觉醒值+5%"]
@@ -22,6 +23,8 @@ var about:PackedStringArray
 var days_added:=1
 
 func _ready() -> void:
+	if sl.load_data("current_ord"):
+		Global.current_ord=sl.load_data("current_ord")
 	update_info(Global.current_ord-1)
 
 func update_info(co:int):
@@ -58,8 +61,6 @@ func _set_button_content(btn: Button, parts: PackedStringArray) -> void:
 			btn.text = "\n".join(parts)
 
 func _on_button_pressed() -> void:
-	print(content_a)
-
 	#content_a的示例
 	#["A", "你决定选择飞机从北京出发前往西藏，快速进入高原导致严重高反", "4"]
 	_handle_button_selection(content_a,0)
@@ -107,6 +108,7 @@ func _handle_button_selection(content_arr: Array, about_index: int) -> void:
 	Global.scroll_text+="\n"+about_parts[1]
 	if about_parts.size() >= 3:
 		Global.current_ord=int(about_parts[2])
+		sl.save_data("current_ord",Global.current_ord)
 		var next_idx = Global.current_ord - 1
 		update_info(next_idx)
 	

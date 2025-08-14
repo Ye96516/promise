@@ -133,6 +133,7 @@ script = ExtResource("4_b3o8y")
 
 [node name="BigPic" type="TextureRect" parent="BigPanel"]
 unique_name_in_owner = true
+layout_mode = 0
 offset_left = 188.0
 offset_top = 55.0
 offset_right = 1751.0

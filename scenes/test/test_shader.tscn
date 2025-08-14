@@ -1,0 +1,11 @@
+[gd_scene load_steps=4 format=3 uid="uid://dgk41npoi3xt4"]
+
+[ext_resource type="Shader" uid="uid://ihm112jjn6rn" path="res://scenes/test/test_shader.gdshader" id="1_kf6ht"]
+[ext_resource type="Texture2D" uid="uid://btrm2jqlbcwxp" path="res://art/pic/gril_dragging.png" id="2_n4iug"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_s5k4g"]
+shader = ExtResource("1_kf6ht")
+
+[node name="TestShader" type="Sprite2D"]
+material = SubResource("ShaderMaterial_s5k4g")
+texture = ExtResource("2_n4iug")
